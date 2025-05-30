@@ -19,5 +19,5 @@ steps:
 - script: ls -la target
   displayName: 'List target directory contents'
 
-- script: mvn exec:java -Dexex.mainClass="com.example.App"
+- script: mvn exec:java -Dexec.mainClass="com.example.App"
   displayName: 'Run the JAR file'
