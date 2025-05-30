@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+- script: echo 'Azure Pipeline with Maven'
+  displayName: 'Run a one-line script'
+
+- script: mvn clean install
+  displayName: 'Run a multi-line script'
+
+- script: ls -la target
+  displayName: 'List target directory contents'
+
+- script: mvn exec:java -Dexex.mainClass="com.example.App"
+  displayName: 'Run the JAR file'
